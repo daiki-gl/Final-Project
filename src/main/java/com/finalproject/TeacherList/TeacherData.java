@@ -7,13 +7,14 @@ public class TeacherData {
 
     private StringProperty id;
     private StringProperty name;
-    // private StringProperty hireDate; // Date is not String
+    private StringProperty hireDate; // Date is not String
     private StringProperty password;
 
     // Add hireDate values to everything (getter, setter, constructor)
-    public TeacherData(String id, String name, String password) {
+    public TeacherData(String id, String name, String hireDate, String password) {
         this.id = new SimpleStringProperty(id);
         this.name = new SimpleStringProperty(name);
+        this.hireDate = new SimpleStringProperty(hireDate);
         this.password = new SimpleStringProperty(password);
     }
 
@@ -41,12 +42,24 @@ public class TeacherData {
         this.name = name;
     }
 
+    public StringProperty hireDateProperty() {
+        return hireDate;
+    }
+
+    public String getHireDate() {
+        return hireDate.get();
+    }
+
+    public void setHireDate(StringProperty hireDate) {
+        this.hireDate = hireDate;
+    }
+
     public StringProperty passwordProperty() {
-        return password;
+        return hireDate;
     }
 
     public String getPassword() {
-        return password.get();
+        return hireDate.get();
     }
 
     public void setPassword(StringProperty password) {

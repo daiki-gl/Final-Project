@@ -2,6 +2,7 @@ package com.finalproject;
 
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 import com.finalproject.TeacherList.TeacherData;
@@ -12,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
@@ -24,11 +26,12 @@ public class TeacherListController implements Initializable {
     @FXML
     private TextField name;
     @FXML
-    private TextField password; // change to PasswordField later
+    private DatePicker hireDate; // change to PasswordField later
+    // private TextField hireDate; // change to PasswordField later
 
     // Add hireDate column
-    // @FXML
-    // private ~~~~~ hireDate;
+    @FXML
+    private TextField password;
 
     @FXML
     private TableView<TeacherData> teacherDataTableView;
@@ -38,8 +41,8 @@ public class TeacherListController implements Initializable {
     private TableColumn<TeacherData, String> nameColumn;
     @FXML
     private TableColumn<TeacherData, String> passwordColumn;
-    // @FXML
-    // private TableColumn<TeacherData, String> hireDateColumn;
+    @FXML
+    private TableColumn<TeacherData, String> hireDateColumn;
 
     @FXML
     private Button addTeacherBtn;
@@ -71,9 +74,9 @@ public class TeacherListController implements Initializable {
 
         this.idColumn.setCellValueFactory(new PropertyValueFactory<TeacherData, String>("id"));
         this.nameColumn.setCellValueFactory(new PropertyValueFactory<TeacherData, String>("name"));
-        this.passwordColumn.setCellValueFactory(new PropertyValueFactory<TeacherData, String>("password"));
-        // this.hireDateColumn.setCellValueFactory(new
-        // PropertyValueFactory<TeacherData, ~~~~>("hireDate"));
+        // this.passwordColumn.setCellValueFactory(new PropertyValueFactory<TeacherData,
+        // String>("password"));
+        this.hireDateColumn.setCellValueFactory(new PropertyValueFactory<TeacherData, String>("hireDate"));
 
         this.teacherDataTableView.setItems(teacherModel.getTeachers());
         errorMsg.setText(null);
@@ -83,7 +86,7 @@ public class TeacherListController implements Initializable {
     @FXML
     private void addTeacher(ActionEvent event) {
         if (!this.name.getText().equals("") && !this.password.getText().equals("")) {
-            teacherModel.addTeacher(this.name.getText(), this.password.getText());
+            teacherModel.addTeacher(this.name.getText(), this.hireDate, this.password.getText());
             this.loadTeacherData();
             this.clearFields(null);
         } else {
@@ -105,17 +108,17 @@ public class TeacherListController implements Initializable {
     // }
     // }
 
-    // delete employee
-    // @FXML
-    // private void deleteEmployee(ActionEvent event) {
-    // if (teacherDataTableView.getSelectionModel().getSelectedIndex() != -1) {
-    // teacherModel.deleteEmployee(teacherDataTableView.getSelectionModel().getSelectedIndex());
-    // this.loadTeacherData();
-    // this.clearFields(null);
-    // } else {
-    // errorMsg.setText("*Select employee data which you want to delete");
-    // }
-    // }
+    // delete Teacher
+    @FXML
+    private void deleteTeacher(ActionEvent event) {
+        if (teacherDataTableView.getSelectionModel().getSelectedIndex() != -1) {
+            teacherModel.deleteTeacher(teacherDataTableView.getSelectionModel().getSelectedIndex());
+            this.loadTeacherData();
+            this.clearFields(null);
+        } else {
+            errorMsg.setText("*Select employee data which you want to delete");
+        }
+    }
 
     // clear fields
     @FXML
