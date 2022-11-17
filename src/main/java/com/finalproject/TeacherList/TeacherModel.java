@@ -1,15 +1,19 @@
 package com.finalproject.TeacherList;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 // import java.util.Arrays;
+import java.time.ZoneId;
 
 import com.finalproject.dbUnit.dbConnection;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.DatePicker;
 
 public class TeacherModel {
 
@@ -38,7 +42,7 @@ public class TeacherModel {
                 this.teacherData.add(new TeacherData(
                         resultSet.getString(1),
                         resultSet.getString(2),
-                        // resultSet.getString(4),
+                        resultSet.getString(3),
                         resultSet.getString(4)));
             }
 
@@ -46,7 +50,6 @@ public class TeacherModel {
 
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Theres an Error!!!!!!!!!!!!!!!!!!");
         }
 
         return null;
@@ -54,17 +57,19 @@ public class TeacherModel {
     }
 
     // Add hireDate column
-    public void addTeacher(String name, String password) {
-        String query = "INSERT INTO teachers_tbl (name, password) VALUES (?, ?)";
+    public void addTeacher(String name, DatePicker hireDate, String password) {
+        String query = "INSERT INTO teachers_tbl (name, hire_date, password) VALUES (?, ?, ?)";
         PreparedStatement statement = null;
 
         try {
             statement = conn.prepareStatement(query);
+            LocalDate setHireDate = hireDate.getValue();
 
             statement.setString(1, name);
-            statement.setString(2, password);
+            statement.setDate(2, Date.valueOf(setHireDate));
+            statement.setString(3, password);
 
-            statement.executeQuery();
+            statement.execute();
 
         } catch (SQLException e) {
             e.printStackTrace();
