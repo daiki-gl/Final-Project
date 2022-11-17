@@ -18,8 +18,8 @@ public class HomeController {
     private Button teacherBtn;
     @FXML
     private Button subjectBtn;
-    @FXML
-    private Button adminBtn;
+    // @FXML
+    // private Button adminBtn;
 
     // Subject
     @FXML
@@ -64,23 +64,23 @@ public class HomeController {
     }
 
     // admin
-    @FXML
-    public void switchToAdminPage(ActionEvent event) {
-        Stage stage = (Stage) this.adminBtn.getScene().getWindow();
-        stage.close();
-        adminPage();
-    }
+    // @FXML
+    // public void switchToAdminPage(ActionEvent event) {
+    //     Stage stage = (Stage) this.adminBtn.getScene().getWindow();
+    //     stage.close();
+    //     adminPage();
+    // }
 
-    public void adminPage() {
-        Stage signUpStage = new Stage();
-        try {
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Administrator.fxml")));
+    // public void adminPage() {
+    //     Stage signUpStage = new Stage();
+    //     try {
+    //         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Administrator.fxml")));
 
-            signUpStage.setScene(scene);
-            signUpStage.setTitle("Administrator");
-            signUpStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    //         signUpStage.setScene(scene);
+    //         signUpStage.setTitle("Administrator");
+    //         signUpStage.show();
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
 }

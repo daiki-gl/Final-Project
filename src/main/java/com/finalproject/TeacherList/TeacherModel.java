@@ -36,7 +36,7 @@ public class TeacherModel {
 
             ResultSet resultSet = conn.createStatement().executeQuery(query);
 
-            // id | createAt | name | department
+            // id | createAt | name | data | subject
 
             while (resultSet.next()) {
                 this.teacherData.add(new TeacherData(

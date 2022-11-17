@@ -17,11 +17,6 @@
             <Font name="Microsoft Sans Serif" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="adminBtn" layoutX="365.0" layoutY="501.0" mnemonicParsing="false" onAction="#switchToAdminPage" prefHeight="72.0" prefWidth="550.0" text="Admin">
-         <font>
-            <Font name="Microsoft Sans Serif" size="18.0" />
-         </font>
-      </Button>
       <Text fill="#4681bc" layoutX="396.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ABC SCHOOL" textAlignment="CENTER">
          <font>
             <Font size="80.0" />
