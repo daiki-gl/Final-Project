@@ -53,10 +53,10 @@ public class HomeController {
     public void teacherListPage() {
         Stage signUpStage = new Stage();
         try {
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("TeacherList.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("AdminTeacherList.fxml")));
 
             signUpStage.setScene(scene);
-            signUpStage.setTitle("Teacher List");
+            signUpStage.setTitle("Admin Teacher List");
             signUpStage.show();
         } catch (IOException e) {
             e.printStackTrace();
