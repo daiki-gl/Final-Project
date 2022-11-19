@@ -9,10 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.finalproject.LoginController">
    <children>
-      <Label layoutX="54.0" layoutY="67.0" text="Login">
+      <Label layoutX="54.0" layoutY="67.0" text="Admin Login">
          <font>
             <Font name="Chalkduster" size="24.0" />
          </font>
