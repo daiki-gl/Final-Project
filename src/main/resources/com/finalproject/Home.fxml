@@ -7,12 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.finalproject.HomeController">
    <children>
-      <Button fx:id="teacherBtn" layoutX="365.0" layoutY="309.0" mnemonicParsing="false" onAction="#switchToTeacherList" prefHeight="150.0" prefWidth="250.0" text="Teacher List">
-         <font>
-            <Font name="Microsoft Sans Serif" size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="subjectBtn" layoutX="665.0" layoutY="309.0" mnemonicParsing="false" onAction="#switchToSubjectList" prefHeight="150.0" prefWidth="250.0" text="Subject List">
+      <Button fx:id="teacherBtn" layoutX="515.0" layoutY="310.0" mnemonicParsing="false" onAction="#switchToTeacherList" prefHeight="150.0" prefWidth="250.0" text="Teacher List">
          <font>
             <Font name="Microsoft Sans Serif" size="18.0" />
          </font>

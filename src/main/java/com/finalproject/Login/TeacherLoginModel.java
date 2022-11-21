@@ -26,7 +26,7 @@ public class TeacherLoginModel {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
 
-        String query = "SELECT * FROM login_tbl WHERE login_name = ? AND password = ?";
+        String query = "SELECT * FROM teachers_tbl WHERE teacher_id = ? AND password = ?";
 
         try {
             statement = this.conn.prepareStatement(query);

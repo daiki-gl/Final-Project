@@ -65,10 +65,10 @@ public class SignupController implements Initializable {
     public void loginPage() {
         Stage signUpStage = new Stage();
         try {
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Login.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("TeacherLogin.fxml")));
 
             signUpStage.setScene(scene);
-            signUpStage.setTitle("Sign Up Page");
+            signUpStage.setTitle("Login Page");
             signUpStage.show();
         } catch (IOException e) {
             e.printStackTrace();

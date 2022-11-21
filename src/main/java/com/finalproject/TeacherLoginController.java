@@ -19,14 +19,14 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class TeacherLoginController implements Initializable {
-    TeacherLoginModel loginModel = new TeacherLoginModel();
+    TeacherLoginModel techLoginModel = new TeacherLoginModel();
 
     @FXML
     private TextField username;
     @FXML
     private PasswordField password;
     @FXML
-    private Button loginBtn;
+    private Button techLoginBtn;
     @FXML
     private Label loginStatus;
     @FXML
@@ -37,7 +37,7 @@ public class TeacherLoginController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        if (loginModel.isDatabaseConnected()) {
+        if (techLoginModel.isDatabaseConnected()) {
             // inject a text to dbStatus that db is connected
             System.out.println("Connected to Database");
         } else {
@@ -49,8 +49,8 @@ public class TeacherLoginController implements Initializable {
     @FXML
     public void Login(ActionEvent event) {
 
-        if (this.loginModel.isTechLogin(this.username.getText(), this.password.getText())) {
-            Stage stage = (Stage) this.loginBtn.getScene().getWindow();
+        if (this.techLoginModel.isTechLogin(this.username.getText(), this.password.getText())) {
+            Stage stage = (Stage) this.techLoginBtn.getScene().getWindow();
             stage.close();
 
             homePage();
@@ -102,7 +102,7 @@ public class TeacherLoginController implements Initializable {
     public void Admin(ActionEvent event) {
         Stage stage = (Stage) this.admin.getScene().getWindow();
         stage.close();
-        signUpPage();
+        adminLoginPage();
     }
 
     public void adminLoginPage() {

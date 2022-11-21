@@ -30,7 +30,7 @@ public class LoginController implements Initializable {
     @FXML
     private Label loginStatus;
     @FXML
-    private Hyperlink signup;
+    private Hyperlink techLogin;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -63,10 +63,10 @@ public class LoginController implements Initializable {
 
         Stage homeStage = new Stage();
         try {
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Home.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("AdminHome.fxml")));
 
             homeStage.setScene(scene);
-            homeStage.setTitle("Home Page");
+            homeStage.setTitle("Admin Home Page");
             homeStage.setResizable(false);
             homeStage.show();
 
@@ -76,22 +76,42 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    public void Signup(ActionEvent event) {
-        Stage stage = (Stage) this.signup.getScene().getWindow();
+    public void BackToLogin(ActionEvent event) {
+        Stage stage = (Stage) this.techLogin.getScene().getWindow();
         stage.close();
-        signUpPage();
+        loginPage();
     }
 
-    public void signUpPage() {
+    public void loginPage() {
         Stage signUpStage = new Stage();
         try {
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Signup.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("TeacherLogin.fxml")));
 
             signUpStage.setScene(scene);
-            signUpStage.setTitle("Sign Up Page");
+            signUpStage.setTitle("Login Page");
             signUpStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    // @FXML
+    // public void Signup(ActionEvent event) {
+    //     Stage stage = (Stage) this.signup.getScene().getWindow();
+    //     stage.close();
+    //     signUpPage();
+    // }
+
+    // public void signUpPage() {
+    //     Stage signUpStage = new Stage();
+    //     try {
+    //         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Signup.fxml")));
+
+    //         signUpStage.setScene(scene);
+    //         signUpStage.setTitle("Sign Up Page");
+    //         signUpStage.show();
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
 }

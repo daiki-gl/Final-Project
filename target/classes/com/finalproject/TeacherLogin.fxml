@@ -16,12 +16,12 @@
             <Font name="Chalkduster" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="username" layoutX="160.0" layoutY="131.0" prefHeight="33.0" prefWidth="364.0">
+      <TextField fx:id="username" layoutX="160.0" layoutY="131.0" prefHeight="33.0" prefWidth="364.0" promptText="username">
          <font>
             <Font name="Microsoft Sans Serif" size="18.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="password" layoutX="160.0" layoutY="187.0" prefHeight="33.0" prefWidth="364.0" promptText="pass">
+      <PasswordField fx:id="password" layoutX="160.0" layoutY="187.0" prefHeight="33.0" prefWidth="364.0" promptText="password">
          <font>
             <Font name="Microsoft Sans Serif" size="18.0" />
          </font>
@@ -36,7 +36,7 @@
             <Font name="Chalkboard" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="loginBtn" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="10.0" layoutX="217.0" layoutY="281.0" mnemonicParsing="false" onAction="#Login" prefHeight="49.0" prefWidth="189.0" text="Login" textFill="#386b3e">
+      <Button fx:id="techLoginBtn" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="10.0" layoutX="217.0" layoutY="281.0" mnemonicParsing="false" onAction="#Login" prefHeight="49.0" prefWidth="189.0" text="Login" textFill="#386b3e">
          <font>
             <Font name="Chalkduster" size="24.0" />
          </font>
@@ -54,7 +54,7 @@
             <Font name="Chalkduster" size="14.0" />
          </font>
       </Label>
-      <Hyperlink fx:id="admin" layoutX="507.0" layoutY="40.0" onAction="#adminLoginPage" text="Admin" textFill="#e47c7c" underline="true">
+      <Hyperlink fx:id="admin" layoutX="507.0" layoutY="40.0" onAction="#Admin" text="Admin" textFill="#e47c7c" underline="true">
          <font>
             <Font name="Chalkduster" size="14.0" />
          </font>
